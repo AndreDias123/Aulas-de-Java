@@ -19,9 +19,14 @@ public class Main {
 		}
 
 		System.out.println();
-		System.out.println("Emprestando o livro: " + novoLivro.getTitulo());
-		novoLivro.setDisponivel(false);
-		String statusFinal = novoLivro.isDisponivel() ? "disponivel" : "indisponivel";
-		System.out.println(novoLivro.getTitulo() + " agora esta " + statusFinal);
+		System.out.println("Testando emprestimo e devolucao:");
+		biblioteca.emprestar_livro("Clean Code");
+		biblioteca.emprestar_livro("Clean Code");
+		biblioteca.devolver_livro("Clean Code");
+		biblioteca.devolver_livro("Livro Inexistente");
+
+		System.out.println();
+		System.out.println("Livros disponiveis:");
+		biblioteca.livros_disponiveis();
 	}
 }
