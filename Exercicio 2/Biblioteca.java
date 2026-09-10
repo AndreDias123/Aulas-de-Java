@@ -13,11 +13,19 @@ public class Biblioteca {
 		livros.add(livro);
 	}
 
+	public void listar_livros() {
+		System.out.println("Bibliote:" + nome);
+		for (Livro livro : livros) {
+			System.out.println("Livro: " + livro.getTitulo() + " - Autor: " + livro.getAutor() + " - Disponivel: " + livro.isDisponivel());
+		}
+	}
+
 	public void emprestar_livro(String titulo) {
+		System.out.println("Bibliote:" + nome);
 		for (Livro livro : livros) {
 			if (livro.getTitulo().equalsIgnoreCase(titulo) && livro.isDisponivel()) {
 				livro.setDisponivel(false);
-				System.out.printf("Livro %s emprestado; %n", livro.getTitulo());
+				System.out.println("Livro " + livro.getTitulo() + " emprestado.");
 				return;
 			}
 		}

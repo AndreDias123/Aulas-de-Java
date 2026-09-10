@@ -13,6 +13,18 @@ public class Main {
 
 		Biblioteca biblioteca = new Biblioteca("Pokemon", livros);
 
-		Livro o_livro = new Livro("O pequeno principe", "Antoine", true);
+		Livro novo_livro = new Livro("O pequeno principe", "Antoine", true);
+
+		biblioteca.listar_livros();
+		biblioteca.adicionar_livro(novo_livro);
+		System.out.println("====================");
+
+		System.out.println("Novo livro adicionado.");
+		biblioteca.listar_livros();
+
+		System.out.println("====================");
+
+		System.out.println("Emprestar livro:");
+		biblioteca.emprestar_livro("Crime e Castigo");
 	}
 }
